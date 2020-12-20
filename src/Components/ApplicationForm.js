@@ -40,6 +40,18 @@ export default function ApplicationForm(props){
         setOccupation(e.target.value);
     }
 
+    const [religion, setReligion] = useState("");
+    const religionChanged = e =>{
+        e.preventDefault();
+        setReligion(e.target.value);
+    }
+
+    const [permanentAddress, setPermanentAddress] = useState("");
+    const permanentAddressChanged = e =>{
+        e.preventDefault();
+        setPermanentAddress(e.target.value);
+    }
+    
     const [startDate, setStartDate] = useState(new Date());
 
     return(
@@ -73,32 +85,23 @@ export default function ApplicationForm(props){
             <div className="field">
                 <label>Occupation</label>
                 <input onChange={occupationChanged} value={occupation} type="text"/>
-
-            </div>
-
-            <div className="field">
-                <label>Occupation</label>
-                <input type="text" name="occupation"/>
             </div>
 
             <div className="field">
                 <label>Religion</label>
-                <input type="text" name="religion"/>
+                <input onChange={religionChanged} value={religion} type="text"/>
             </div>
 
             <div className="field">
                 <label>Permanent Address</label>
-                <input type="text" name="permanentAddress"/>
+                <input onChange={permanentAddressChanged} value={permanentAddress} type="text"/>
             </div>
 
-            <div className="field">
-                <label>Religion</label>
-                <input type="text" name="religion"/>
-            </div>
-
+          
             <div className="field">
                 <label>Division</label>
-                <input type="text" name="permanentDivision"/>
+                <input onChange={permanentAddressChanged} value={permanentAddress} type="text"/>
+
             </div>
             <div className="field">
                 <label>District</label>
