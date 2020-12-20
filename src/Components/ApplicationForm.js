@@ -3,6 +3,43 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ApplicationForm(props){
+    
+    const [name, setName] = useState("");
+    const nameChanged = e =>{
+        e.preventDefault();
+        setName(e.target.value);
+    }
+    const [designation, setDesignation] = useState("");
+    const designationChanged = e =>{
+        e.preventDefault();
+        setDesignation(e.target.value);
+    }
+
+    const [workingPlace, setWorkingPlace] = useState("");
+    const workingPlaceChanged = e =>{
+        e.preventDefault();
+        setWorkingPlace(e.target.value);
+    }
+
+    const [fatherOrHusbandName, setFatherOrHusbandName] = useState("");
+    const fatherOrHusbandNameChanged = e =>{
+        e.preventDefault();
+        setFatherOrHusbandName(e.target.value);
+    }
+
+    
+    const [motherName, setMotherName] = useState("");
+    const motherNameChanged = e =>{
+        e.preventDefault();
+        setMotherName(e.target.value);
+    }
+
+    const [occupation, setOccupation] = useState("");
+    const occupationChanged = e =>{
+        e.preventDefault();
+        setOccupation(e.target.value);
+    }
+
     const [startDate, setStartDate] = useState(new Date());
 
     return(
@@ -10,32 +47,33 @@ export default function ApplicationForm(props){
         <h1>Hellow</h1>
             <div className="field">
                 <label>Name</label>
-                <input type="text" name="name"/>
+                <input onChange={nameChanged} value={name} type="text" name="name"/>
             </div>
             
             <div className="field">
                 <label>Designation</label>
-                <input type="text" name="designation"/>
+                <input onChange={designationChanged} value={designation} type="text"/>
             </div>
 
             <div className="field">
                 <label>Working Place</label>
-                <input type="text" name="workingPlace"/>
+                <input onChange={workingPlaceChanged} value={workingPlace} type="text"/>
             </div>
 
             <div className="field">
                 <label>Father/Husband Name</label>
-                <input type="text" name="fatherOrHusbandName"/>
+                <input onChange={fatherOrHusbandNameChanged} value={fatherOrHusbandName} type="text"/>
             </div>
 
             <div className="field">
                 <label>Mother</label>
-                <input type="text" name="motherName"/>
+                <input onChange={motherNameChanged} value={motherName} type="text"/>
             </div>
 
             <div className="field">
                 <label>Occupation</label>
-                <input type="text" name="occupation"/>
+                <input onChange={occupationChanged} value={occupation} type="text"/>
+
             </div>
 
             <div className="field">
